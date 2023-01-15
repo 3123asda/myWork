@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class myWork {
+    public static void main(String[] args){
+        Scanner call_scanner = new Scanner(System.in);
+
+        //Set myName, myAge, myWork = null;
+        String myName = null;
+        String myAge = null;
+        String myWork = null;
+
+        //Set myRate,myOverTimeHrs,myHours,myOverTime,mySalary,myTotal,OverTime,myOverTimePay = 0;
+        //Note: myOverTime ay hindi nagamit dahil hindi ginamit sa psuodocode ang myOverTime pero sa if statement gumamit ng myOverTimePay na wala naman sa Step 6 na e ilalagay baka na wrong typo lang ito.
+
+        double myRate,myOverTimeHrs,myHours,myOverTime,mySalary,myTotal,OverTime,myOverTimePay;
+        myRate = 0;
+        myOverTimeHrs = 0;
+        myHours = 0;
+        myOverTime = 0;
+        mySalary = 0;
+        myTotal = 0;
+        OverTime = 0;
+        myOverTimePay = 0;
+
+        System.out.print("Name: ");
+        myName = call_scanner.nextLine();
+        System.out.print("Age: ");
+        myAge = call_scanner.nextLine();
+        System.out.print("Work: ");
+        myWork = call_scanner.nextLine();
+        System.out.print("Rate: ");
+        myRate = call_scanner.nextInt();
+        System.out.print("Over Time Hrs: ");
+        myOverTimeHrs = call_scanner.nextInt();
+        System.out.print("Hours: ");
+        myHours = call_scanner.nextInt();
+        mySalary = myRate * myHours;
+
+        //Kapag myHours na variable na ininput ng user ay 9 hours pataas e eexecute niya ang if statement
+
+        if(myHours >= 9){
+            OverTime = (mySalary * 3) / 10;
+            myOverTimePay = OverTime * myOverTimeHrs;
+            myTotal = mySalary + myOverTimePay;
+
+        }
+
+        //Kapag myHours na variable na ininput ng user ay 8 hours pababa e eexecute niya ang else statement
+
+        else {
+            System.out.println("No overtime hour");
+        }
+
+        System.out.println("Name: "+ myName);
+        System.out.println("Age: " + myAge);
+        System.out.println("Work: " + myWork);
+        System.out.println("Salary: " + mySalary);
+        System.out.println("Over Time amount: "+ myOverTimePay);
+        System.out.println(myTotal);
+
+    }
+}
